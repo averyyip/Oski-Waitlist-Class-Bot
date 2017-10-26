@@ -13,6 +13,8 @@ driver = webdriver.PhantomJS()
 stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-140-001-lec-001"
 stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-c8-001-lec-001"
 
+print(os.environ["USERN"])
+print(os.environ["USERP"])
 # navigate to the selection front page
 driver.get(stat140_url)
 
