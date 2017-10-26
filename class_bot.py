@@ -13,10 +13,6 @@ driver = webdriver.PhantomJS()
 stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-140-001-lec-001"
 stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-c8-001-lec-001"
 
-print(os.environ.get("USERN"))
-print(os.environ.get("USERP"))
-print(type(os.environ.get("USERN")))
-sys.stdout.flush()
 # navigate to the selection front page
 driver.get(stat140_url)
 
@@ -36,7 +32,7 @@ if waitlist_curr < waitlist_cap:
 	server.starttls()
 	server.login(os.environ.get("USERN"), os.environ.get("USERP"))
 	msg = "Stat 140 is now open"
-	server.sendmail(os.environ["USERN"], output_email, msg)
+	server.sendmail(os.environ.get("USERN"), output_email, msg)
 	server.quit()
 	print("Class has open waitlist")
 
