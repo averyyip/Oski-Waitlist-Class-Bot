@@ -6,7 +6,7 @@ import time
 driver = webdriver.PhantomJS()
 
 # url
-stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-c8-001-lec-001"
+stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-140-001-lec-001"
 
 
 # navigate to the selection front page
@@ -32,5 +32,6 @@ while (True):
 		msg = "Stat 140 is now open"
 		server.sendmail("averyyip99@gmail.com", "averyyip@berkeley.edu", msg)
 		server.quit()
+		print("Class has open waitlist")
 	print("Successful Run")
 	time.sleep(600)
