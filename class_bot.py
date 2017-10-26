@@ -34,4 +34,7 @@ while (True):
 		server.sendmail("averyyip99@gmail.com", "averyyip@berkeley.edu", msg)
 		server.quit()
 
+	print("Successful Run")
+  	sys.stdout.flush()
+  	
 	time.sleep(600)
