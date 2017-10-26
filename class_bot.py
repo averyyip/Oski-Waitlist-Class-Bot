@@ -2,16 +2,16 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import smtplib
 import time
-import heroku
 
 # get the path for chromedriverserver
 driver = webdriver.PhantomJS()
 
+# url
+stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-c8-001-lec-001"
+
+
 # navigate to the selection front page
 driver.get(stat140_url)
-
-# url
-stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-140-001-lec-001"
 
 
 while (True):
@@ -27,7 +27,7 @@ while (True):
 	waitlist_cap = int(enrollment_data_selectors[3].text)
 
 	if waitlist_curr < waitlist_cap:
-		iserver = smtplib.SMTP('smtp.gmail.com', 587)
+		server = smtplib.SMTP('smtp.gmail.com', 587)
 		server.starttls()
 		server.login("averyyip99@gmail.com", "Luckyfast1")
 		msg = "Stat 140 is now open"
