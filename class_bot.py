@@ -2,6 +2,7 @@ from selenium import webdriver
 import smtplib
 import time
 import sys
+import os
 
 output_email = "averyyip@berkeley.edu"
 
@@ -10,7 +11,7 @@ driver = webdriver.PhantomJS()
 
 # url
 stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-140-001-lec-001"
-
+stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-c8-001-lec-001"
 
 # navigate to the selection front page
 driver.get(stat140_url)
