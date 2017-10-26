@@ -26,7 +26,7 @@ waitlist_cap = int(enrollment_data_selectors[3].text)
 if waitlist_curr < waitlist_cap:
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
-	server.login("averyyip99@gmail.com", "Luckyfast1")
+	server.login(os.environ["USERN"], os.environ["USERP"])
 	msg = "Stat 140 is now open"
 	server.sendmail("averyyip99@gmail.com", "averyyip@berkeley.edu", msg)
 	server.quit()
