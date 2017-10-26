@@ -1,6 +1,9 @@
 from selenium import webdriver
 import smtplib
 import time
+import sys
+
+output_email = "averyyip@berkeley.edu"
 
 # get the path for chromedriverserver
 driver = webdriver.PhantomJS()
@@ -28,8 +31,9 @@ if waitlist_curr < waitlist_cap:
 	server.starttls()
 	server.login(os.environ["USERN"], os.environ["USERP"])
 	msg = "Stat 140 is now open"
-	server.sendmail("averyyip99@gmail.com", "averyyip@berkeley.edu", msg)
+	server.sendmail(os.environ["USERN"], output_email, msg)
 	server.quit()
 	print("Class has open waitlist")
+
 print("Successful Run")
 sys.stdout.flush()
