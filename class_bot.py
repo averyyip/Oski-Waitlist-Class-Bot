@@ -24,7 +24,7 @@ while (True):
 
 	#current waitlist and waitlist cap
 	waitlist_curr = int(enrollment_data_selectors[2].text)
-	waitlist_cap = (enrollment_data_selectors[3].text)
+	waitlist_cap = int(enrollment_data_selectors[3].text)
 
 	if waitlist_curr < waitlist_cap:
 	    iserver = smtplib.SMTP('smtp.gmail.com', 587)
