@@ -32,4 +32,3 @@ if waitlist_curr < waitlist_cap:
 	server.quit()
 	print("Class has open waitlist")
 print("Successful Run")
-time.sleep(600)
