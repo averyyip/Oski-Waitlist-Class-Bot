@@ -1,2 +1,1 @@
-beautifulsoup4 >= 0.0
 selenium >= 0
