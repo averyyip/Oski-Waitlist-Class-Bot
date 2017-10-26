@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import smtplib
 import time
+import heroku
 
 # get the path for chromedriverserver
 driver = webdriver.PhantomJS()
@@ -33,8 +34,5 @@ while (True):
 		msg = "Stat 140 is now open"
 		server.sendmail("averyyip99@gmail.com", "averyyip@berkeley.edu", msg)
 		server.quit()
-
 	print("Successful Run")
-  	sys.stdout.flush()
-  	
 	time.sleep(600)
