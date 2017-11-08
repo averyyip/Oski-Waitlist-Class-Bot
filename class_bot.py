@@ -4,7 +4,7 @@ import time
 import sys
 import os
 
-output_email = "averyyip@berkeley.edu"
+output_email = "sorjo@berkeley.edu"
 
 # get the path for chromedriverserver
 driver = webdriver.PhantomJS()
