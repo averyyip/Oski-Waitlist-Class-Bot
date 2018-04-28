@@ -14,9 +14,11 @@ class_url = "http://classes.berkeley.edu/content/2018-fall-indeng-115-001-lec-00
 
 
 # get the path for chromedriverserver
-options = webdriver.ChromeOptions()
-options.add_argument('headless')
-driver = webdriver.Chrome()#chrome_options=options)
+chrome_options = Options()
+chrome_options.binary_location = GOOGLE_CHROME_BIN
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
+driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
 # navigate to the selection front page
 driver.get(class_url)
