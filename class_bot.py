@@ -4,16 +4,16 @@ import time
 import sys
 import os
 
-output_email = "sorjo@berkeley.edu"
+output_email = "averyyip@berkeley.edu"
 
 # get the path for chromedriverserver
 driver = webdriver.PhantomJS()
 
 # url
-stat140_url = "http://classes.berkeley.edu/content/2018-spring-stat-140-001-lec-001"
+class_url = "http://classes.berkeley.edu/content/2018-fall-indeng-115-001-lec-001"
 
 # navigate to the selection front page
-driver.get(stat140_url)
+driver.get(class_url)
 
 # define the selection criteria
 driver.find_element_by_css_selector('div.update-enrollment > span').click()
