@@ -3,20 +3,28 @@ import smtplib
 import time
 import sys
 import os
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
 
 output_email = "averyyip@berkeley.edu"
+class_url = "http://classes.berkeley.edu/content/2018-fall-indeng-115-001-lec-001"
+
 
 # get the path for chromedriverserver
-driver = webdriver.PhantomJS()
-
-# url
-class_url = "http://classes.berkeley.edu/content/2018-fall-indeng-115-001-lec-001"
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+driver = webdriver.Chrome()#chrome_options=options)
 
 # navigate to the selection front page
 driver.get(class_url)
 
 # define the selection criteria
-driver.find_element_by_css_selector('div.update-enrollment > span').click()
+WebDriverWait(driver, 10).until(
+	EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.update-enrollment'))
+    ).click()
 
 # finding enrollment
 p_selectors = driver.find_elements_by_css_selector("div.enrollment-update-target.enrollment-update-target > p")
