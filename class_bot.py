@@ -14,7 +14,7 @@ class_url = "http://classes.berkeley.edu/content/2018-fall-indeng-115-001-lec-00
 
 
 # get the path for chromedriverserver
-chrome_options = Options()
+chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = GOOGLE_CHROME_BIN
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
